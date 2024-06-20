@@ -1,0 +1,37 @@
+{% extends 'partials/base_auth.html' %}
+
+{% load static%}
+
+{% block content %}
+
+<h1>Log in</h1>
+<div clas="card"> 
+    <!-- <p>UserName: </p>
+        <input type="text">
+        <p>Password</p>
+        <input type="text">
+        <p>Reapeat Password</p>
+        <input type="text"> -->
+        {% include 'partials/_messages.html' %}
+        
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <input 
+            type="text"
+            name="username"
+            placeholder="UserName"
+            id="usernameField"
+            value="{{fieldValues.username}}">
+            <input 
+            type="text"
+            name="password"
+            placeholder="passowrd"
+            {%comment%} value="{{fieldValues.password}}" {%endcomment%}
+            id="passwordField">
+            </div>
+            <input id ="login" type="submit" value="login">
+    
+        </form>
+<script src="{% static 'js/login.js' %}"></script>
+    
+{% endblock %}

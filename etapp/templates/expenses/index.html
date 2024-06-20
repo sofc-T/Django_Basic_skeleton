@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+      {% include 'partials/_messages.html' %}
+      <div class="col-md-9">
+        
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Expenses</a></li>
+            <li class="breadcrumb-item active" aria-current="page">My expenses</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <a href="{% url 'add_expenses' %}" class="btn btn-primary"> Add an expense</a>
+    </div>
+    <hr>
+{% endblock %}
+
